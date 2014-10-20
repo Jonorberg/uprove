@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 
+  <title>ILIW</title>
+
+        <script type='text/javascript' src='spotify.js'></script>
+        <link rel="stylesheet" type="text/css" href="style.css">  
+        <script type='text/javascript' src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://d2c87l0yth4zbw.cloudfront.net/reboot.css">
+        <script type='application/javascript' src="https://addb.absolutdrinks.com/?appId=1249&callback=myCallback"></script>
+        <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+
+</head>
+
+		<body>
+
+            <!--kod för Spotifysökruta och visning av album samt uppspelning av låtar-->
+
+<div class="container">
+    <h1>Search for an Artist</h1>
+    <form id="search-form">
+        <input type="text" id="query" value="" class="form-control" />
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results"></div>
+</div>
+
+
+<script src="spotify.js"  id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+    </script>
+
+
+
+   <!--Instagram kod-->
+
+<script type="text/javascript">
+    var feed = new instaFeed({
+        get: 'tagged',
+        tagName: 'vuxenresan',
+        clientId: '088e7ceced2c4a8cba62ca9e44de92d2',
+        template: '<a href="{{link}}"><img src="http:{{image}}" /></a>',
+        resolution: 'thumbnail',
+        sortBy: 'most-recent'
+    });
+    instaFeed.run();
+</script>
+
+<footer>
+    <p>
+       <b>If i do this you do that</b>
+    </p>
+</footer>
+
+
+    </body>
+</html>
+
